@@ -1,0 +1,21 @@
+.header {
+    position: fixed;
+    height: 40px;
+    width: 100vw;
+    background-color: #f9f7ea;
+    border-bottom: 1px solid #D6DBE2;
+    
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px;
+    }
+
+    &__title {
+        font-size: 20px;
+    }
+
+    &__login {
+        font-size: 20px;
+    }
+}

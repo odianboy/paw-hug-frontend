@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+
+@font-face {
+    font-family: Durik;
+    src: url(assets/fonts/Durik/ДУРИК.ttf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Durik;
+    background: linear-gradient(to right, #fffcdc, #d9a7c7);
+}
+
+.container {
+    max-width: 1280px;
+    width: 100%;
+    margin: auto;
+}
