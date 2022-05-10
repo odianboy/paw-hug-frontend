@@ -18,7 +18,7 @@ export class AuthDialogComponent {
 
   formInit() {
     return new FormGroup({
-      mobile: new FormControl(null, Validators.required),
+      mobile: new FormControl(null, [Validators.required, Validators.minLength(10)]),
       password: new FormControl(null, Validators.required),
     })
   }
