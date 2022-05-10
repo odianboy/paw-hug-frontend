@@ -1,0 +1,17 @@
+.auth {
+    text-align: center;
+
+    &__title {
+        font-size: 20px;
+        margin: 10px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__submit {
+        text-align: center;
+    }
+}

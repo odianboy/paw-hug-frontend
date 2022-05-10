@@ -1,8 +1,12 @@
 <nav class="header">
   <div class="container">
     <div class="header__content">
-      <h3 class="header__title">Объятия лап!</h3>
-      <mat-icon class="header__login">login</mat-icon>
+      <h3 class="header__title">{{ title }}</h3>
+      <div class="header__authorization">
+        <pw-button [textTooltip]="textTooltip" (click)="openDialog()">
+          <pw-icon>{{ icon }}</pw-icon>
+        </pw-button>
+      </div>
     </div>
   </div>
 </nav>

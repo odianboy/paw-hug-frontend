@@ -1,4 +1,6 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { AuthDialogComponent } from 'src/features/auth-dialog/components';
 
 @Component({
   selector: 'pw-header-row',
@@ -6,11 +8,17 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./header-row.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeaderRowComponent implements OnInit {
+export class HeaderRowComponent {
 
-  constructor() { }
+  title = 'Объятия лап!';
+  textTooltip = 'Войти';
+  icon = 'login';
 
-  ngOnInit() {
+  constructor(public dialog: MatDialog) {}
+
+  openDialog() {
+    this.dialog.open(AuthDialogComponent, {
+      panelClass: 'auth-dialog',
+    });
   }
-
 }

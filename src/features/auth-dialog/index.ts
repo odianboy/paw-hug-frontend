@@ -1,0 +1,1 @@
+export { AuthDialogModule } from './auth-dialog.module';
