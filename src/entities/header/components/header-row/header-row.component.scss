@@ -1,3 +1,5 @@
+@import '/src/styles/index.scss';
+
 .header {
     position: fixed;
     height: 46px;
@@ -12,9 +14,14 @@
         margin: 5px;
     }
 
+    &__title {
+        font-family: $fontLogo;
+    }
+
     &__title,
     &__login {
         font-size: 20px;
+        cursor: pointer;
     }
 
     &__authorization {

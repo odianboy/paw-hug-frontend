@@ -38,6 +38,11 @@
         </button>
       </pw-input>
 
+      <div class="info">
+        <a class="info__link" [routerLink]="['']">Забыли пароль?</a>
+        <a class="info__link" [routerLink]="['']">Зарегистрироваться</a>
+      </div>
+
       <div class="auth__submit">
         <pw-button-submit [disabled]="form.invalid">
           Войти

@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 const maskConfig: Partial<IConfig> = {
     validation: false,
@@ -15,7 +16,8 @@ const maskConfig: Partial<IConfig> = {
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxMaskModule
+    NgxMaskModule,
+    RouterModule,
   ],
 })
 export class SharedModule {}

@@ -1,5 +1,6 @@
 .auth {
     text-align: center;
+    font-family: 'Roboto', "Helvetica Neue", sans-serif;
 
     &__title {
         font-size: 20px;
@@ -13,5 +14,23 @@
 
     &__submit {
         text-align: center;
+    }
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+
+    &__link {
+        font-size: 12px;
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+        
+    }
+
+    &__link:hover {
+        text-decoration: underline;
     }
 }

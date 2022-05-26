@@ -1,7 +1,7 @@
 <nav class="header">
   <div class="container">
     <div class="header__content">
-      <h3 class="header__title">{{ title }}</h3>
+      <h3 class="header__title" [routerLink]="['']">{{ title }}</h3>
       <div class="header__authorization">
         <pw-button [textTooltip]="textTooltip" (click)="openDialog()">
           <pw-icon>{{ icon }}</pw-icon>
