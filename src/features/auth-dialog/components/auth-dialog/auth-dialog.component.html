@@ -1,61 +1,48 @@
 <div class="auth">
   <h3 class="auth__title">Авторизация</h3>
   <div mat-dialog-content>
-
     <form
       class="auth__content"
       [formGroup]="form"
       (ngSubmit)="submit()"
     >
-      <mat-form-field
-        class="auth__input"
-        appearance="standard"
+      <pw-input
+        [parentForm]="form"
+        fieldName="mobile"
+        labelName="Телефон"
+        prefixName="+7"
+        typeName="tel"
+        placeholderName="999-999-9999"
+        controlName="mobile"
+        maskName="000-000-0000"
       >
-        <mat-label>Телефон</mat-label>
-        <span matPrefix>+7 &nbsp;</span>
-        <input
-          type="tel"
-          matInput
-          placeholder="999-999-9999"
-          formControlName="mobile"
-          mask="000-000-0000"
-          autocomplete="on"
-        >
-        <pw-icon matSuffix>mode_edit</pw-icon>
-      </mat-form-field>
+        <pw-icon icon>{{ nameIconWrite }}</pw-icon>
+      </pw-input>
 
-      <mat-form-field
-        class="auth__input"
-        appearance="standard"
+      <pw-input
+        [parentForm]="form"
+        fieldName="password"
+        labelName="Пароль"
+        controlName="password"
+        [typeName]="typeInput"
       >
-        <mat-label>Пароль</mat-label>
-        <input
-          type="password"
-          matInput
-          formControlName="password"
-          [type]="typeInput"
-          autocomplete="on"
-        >
         <button
+          icon
           type="button"
           mat-icon-button
-          matSuffix
           (click)="hide = !hide"
           [attr.aria-label]="'Hide password'"
           [attr.aria-pressed]="hide"
         >
           <pw-icon>{{ iconVisibility }}</pw-icon>
         </button>
-      </mat-form-field>
+      </pw-input>
 
       <div class="auth__submit">
-        <pw-button-submit
-          [disabled]="form.invalid"
-        >
+        <pw-button-submit [disabled]="form.invalid">
           Войти
         </pw-button-submit>
       </div>
-      
     </form>
   </div>
 </div>

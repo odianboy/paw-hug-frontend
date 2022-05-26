@@ -6,13 +6,20 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 
-import { ButtonComponent, IconComponent, ButtonSubmitComponent } from './components';
+import {
+  ButtonComponent,
+  IconComponent,
+  ButtonSubmitComponent,
+  InputComponent,
+} from './components';
+import { SharedModule } from '../lib';
 
 @NgModule({
   declarations: [
     ButtonComponent,
     IconComponent,
     ButtonSubmitComponent,
+    InputComponent
   ],
   imports: [
     MatButtonModule,
@@ -20,6 +27,7 @@ import { ButtonComponent, IconComponent, ButtonSubmitComponent } from './compone
     MatTooltipModule,
     MatDialogModule,
     MatInputModule,
+    SharedModule
   ],
   exports: [
     MatIconModule,
@@ -30,6 +38,8 @@ import { ButtonComponent, IconComponent, ButtonSubmitComponent } from './compone
     ButtonComponent,
     IconComponent,
     ButtonSubmitComponent,
+    InputComponent,
+    SharedModule
   ]
 })
 export class UiKitModule {}

@@ -1,0 +1,20 @@
+<mat-form-field
+  appearance="standard"
+  [formGroup]="parentForm"
+>
+  <mat-label>{{ labelName }}</mat-label>
+  <span matPrefix>{{ prefixName }} &nbsp;</span>
+  <input
+    autocomplete="on"
+    matInput
+    [type]="typeName"
+    [placeholder]="placeholderName"
+    [formControlName]="controlName"
+    [mask]="maskName"
+    [value]="value"
+    [attr.disabled]="isDisabled"
+  >
+    <span matSuffix>
+      <ng-content select="[icon]"></ng-content>
+    </span>
+</mat-form-field>

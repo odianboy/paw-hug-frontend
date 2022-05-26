@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'pw-auth-dialog',
@@ -11,13 +11,14 @@ export class AuthDialogComponent {
 
   form: FormGroup;
   hide = true;
+  nameIconWrite = 'mode_edit';
 
-  constructor() {
+  constructor(private fb: FormBuilder) {
     this.form = this.formInit();
   }
 
   formInit() {
-    return new FormGroup({
+    return this.fb.group({
       mobile: new FormControl(null, [Validators.required, Validators.minLength(10)]),
       password: new FormControl(null, Validators.required),
     })
