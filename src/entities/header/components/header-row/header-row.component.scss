@@ -1,9 +1,8 @@
 @import '/src/styles/index.scss';
 
 .header {
-    position: fixed;
-    height: 46px;
-    width: 100vw;
+    overflow: auto;
+    height: 48px;
     background-color: #f9f7ea;
     border-bottom: 1px solid #D6DBE2;
     

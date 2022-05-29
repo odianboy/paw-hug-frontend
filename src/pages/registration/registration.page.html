@@ -1,0 +1,31 @@
+<pw-header-row></pw-header-row>
+
+<div class="container">
+    <div class="reg">
+        <h3 class="reg__title">Регистрация</h3>
+        
+        <form class="reg__content">
+            <pw-input
+                class="reg__input"
+                [parentForm]="form"
+                fieldName="name"
+                labelName="Имя"
+                controlName="name"
+            >
+            </pw-input>
+
+            <pw-input
+                [parentForm]="form"
+                fieldName="mobile"
+                labelName="Телефон"
+                prefixName="+7"
+                typeName="tel"
+                placeholderName="999-999-9999"
+                controlName="mobile"
+                maskName="000-000-0000"
+            >
+            <pw-icon icon>{{ nameIconWrite }}</pw-icon>
+      </pw-input>
+        </form>
+    </div>
+</div>
