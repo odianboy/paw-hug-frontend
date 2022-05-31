@@ -1,31 +1,74 @@
 <pw-header-row></pw-header-row>
 
 <div class="container">
-    <div class="reg">
-        <h3 class="reg__title">Регистрация</h3>
-        
-        <form class="reg__content">
-            <pw-input
-                class="reg__input"
-                [parentForm]="form"
-                fieldName="name"
-                labelName="Имя"
-                controlName="name"
+    <div class="wrapper">
+        <div class="reg">
+            <h3 class="reg__title">Регистрация</h3>
+            
+            <form
+                class="reg__content"
+                [formGroup]="form"
+                (ngSubmit)="submit()"
             >
-            </pw-input>
+                <pw-input
+                    [parentForm]="form"
+                    fieldName="name"
+                    labelName="Имя"
+                    controlName="name"
+                    maskName="S*"
+                >
+                </pw-input>
+    
+                <pw-input
+                    [parentForm]="form"
+                    fieldName="mobile"
+                    labelName="Телефон"
+                    [prefixName]="prefixName"
+                    typeName="tel"
+                    placeholderName="999-999-9999"
+                    controlName="mobile"
+                    maskName="000-000-0000"
+                >
+                </pw-input>
 
-            <pw-input
-                [parentForm]="form"
-                fieldName="mobile"
-                labelName="Телефон"
-                prefixName="+7"
-                typeName="tel"
-                placeholderName="999-999-9999"
-                controlName="mobile"
-                maskName="000-000-0000"
-            >
-            <pw-icon icon>{{ nameIconWrite }}</pw-icon>
-      </pw-input>
-        </form>
+                <pw-input
+                    [parentForm]="form"
+                    fieldName="email"
+                    labelName="Электронная почта"
+                    typeName="email"
+                    placeholderName="hellokitty@gmail.com"
+                    controlName="email"
+                >
+                </pw-input>
+
+                <pw-input
+                    [parentForm]="form"
+                    fieldName="password"
+                    labelName="Пароль"
+                    controlName="password"
+                    [typeName]="typeInput"
+                >
+                    <button
+                        icon
+                        type="button"
+                        mat-icon-button
+                        (click)="hide = !hide"
+                        [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hide"
+                    >
+                        <ng-container *ngIf="this.form.controls['password'].dirty">
+                            <pw-icon>{{ iconVisibility }}</pw-icon>
+                        </ng-container>
+                    </button>
+                </pw-input>
+
+                <div class="reg-submit-btn">
+                    <pw-button-submit [disabled]="form.invalid">
+                        Зарегистрироваться
+                    </pw-button-submit>
+                </div>
+                
+            </form>
+        </div>
     </div>
 </div>
