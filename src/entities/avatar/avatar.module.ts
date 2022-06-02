@@ -1,10 +1,13 @@
 import { NgModule } from "@angular/core";
-import { AvatarCircleComponent } from "./components";
+import { AvatarCircleComponent, AvatarPlusComponent } from "./components";
 
 import { UiKitModule } from 'src/shared/ui';
 
 @NgModule({
-    declarations: [AvatarCircleComponent],
+    declarations: [
+        AvatarCircleComponent,
+        AvatarPlusComponent,
+    ],
     imports: [UiKitModule],
     exports: [AvatarCircleComponent]
 })

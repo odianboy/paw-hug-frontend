@@ -1,0 +1,22 @@
+:host ::ng-deep {
+    .icon {
+        color: white;
+        font-size: 18.5px;
+        transform: scale(1);
+        font-weight: bold;
+    }
+}
+
+.circle {
+    width: 2em;
+    height: 2em;
+    border: 2px solid white;
+    border-radius: 50%;
+    line-height: 2em;
+    text-align: center; 
+    background: #076CE0;
+    position: absolute;
+    top: -70px;
+    right: 10px;
+    cursor: pointer;
+}
