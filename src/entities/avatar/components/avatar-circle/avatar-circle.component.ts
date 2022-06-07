@@ -8,6 +8,8 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class AvatarCircleComponent implements OnInit {
 
+  iconName = 'photo_camera';
+  
   constructor() { }
 
   ngOnInit() {

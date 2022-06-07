@@ -11,6 +11,7 @@ import {
   IconComponent,
   ButtonSubmitComponent,
   InputComponent,
+  ButtonMiniFabComponent,
 } from './components';
 import { SharedModule } from '../lib';
 
@@ -19,7 +20,8 @@ import { SharedModule } from '../lib';
     ButtonComponent,
     IconComponent,
     ButtonSubmitComponent,
-    InputComponent
+    InputComponent,
+    ButtonMiniFabComponent,
   ],
   imports: [
     MatButtonModule,
@@ -38,6 +40,7 @@ import { SharedModule } from '../lib';
     ButtonComponent,
     IconComponent,
     ButtonSubmitComponent,
+    ButtonMiniFabComponent,
     InputComponent,
     SharedModule
   ]

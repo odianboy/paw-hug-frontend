@@ -7,7 +7,8 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AvatarPlusComponent implements OnInit {
-
+  iconName = 'add';
+  
   constructor() { }
 
   ngOnInit() {
