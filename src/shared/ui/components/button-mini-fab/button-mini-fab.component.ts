@@ -9,9 +9,11 @@ import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core
 export class ButtonMiniFabComponent implements OnInit {
 
   @Input() tooltipName: string;
+  @Input() typeButton: string;
 
   constructor() {
     this.tooltipName = '';
+    this.typeButton = 'button';
   }
 
   ngOnInit() {
