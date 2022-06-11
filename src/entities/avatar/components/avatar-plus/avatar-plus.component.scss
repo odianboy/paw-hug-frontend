@@ -1,3 +1,5 @@
+@import '/src/app/index.scss';
+
 :host ::ng-deep {
     .icon {
         font-size: 22px;
@@ -9,6 +11,6 @@
         position: absolute;
         top: -70px;
         right: 10px;
-        background-color:#076CE0;
+        background-color: $avatarPlusColor;
     }
 }

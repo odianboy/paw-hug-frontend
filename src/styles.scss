@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import './styles/index.scss';
+@import './app/index.scss';
 
 @font-face {
     font-family: 'Durik';
@@ -24,18 +24,12 @@ body {
 
 body {
     margin: 0;
-    font-family: $font;
+    font-family: $fontName;
     background: $background;
 }
 
 .container {
-    max-width: $maxWidth;
+    max-width: $containerWidth;
     width: 100%;
     margin: auto;
-}
-
-.auth-dialog {
-    .mat-dialog-container {
-        border-radius: 10px;
-    }
 }

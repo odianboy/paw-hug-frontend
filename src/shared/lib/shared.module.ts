@@ -7,8 +7,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 const maskConfig: Partial<IConfig> = {
-    validation: false,
-  };
+  validation: false,
+};
 
 @NgModule({
   imports: [NgxMaskModule.forRoot(maskConfig)],

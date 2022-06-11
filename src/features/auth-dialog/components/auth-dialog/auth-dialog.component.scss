@@ -1,14 +1,15 @@
+@import '/src/app/index.scss';
+
 .auth {
     text-align: center;
 
     &__title {
-        font-size: 24px;
+        font-size: $fontSizeTitle;
         margin: 10px;
     }
 
     &__content {
-        display: flex;
-        flex-direction: column;
+        @include flexColumn ();
     }
 
     &__submit {
@@ -17,8 +18,7 @@
 }
 
 .info {
-    display: flex;
-    flex-direction: column;
+    @include flexColumn ();
     margin-bottom: 10px;
 
     &__link {

@@ -10,6 +10,8 @@
                 [formGroup]="form"
                 (ngSubmit)="submit()"
             >
+                <pw-avatar-circle></pw-avatar-circle>
+                
                 <pw-input
                     [parentForm]="form"
                     fieldName="name"
@@ -68,8 +70,6 @@
                     </pw-button-submit>
                 </div>
 
-                <pw-avatar-circle></pw-avatar-circle>
-                
             </form>
         </div>
     </div>

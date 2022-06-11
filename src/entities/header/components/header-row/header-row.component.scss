@@ -1,9 +1,9 @@
-@import '/src/styles/index.scss';
+@import '/src/app/index.scss';
 
 .header {
     overflow: auto;
     height: 47px;
-    background-color: #f9f7ea;
+    background-color: $headerColor;
     border-bottom: 1px solid #D6DBE2;
     
     &__content {
@@ -19,7 +19,7 @@
 
     &__title,
     &__login {
-        font-size: 24px;
+        font-size: $fontSizeTitle;
         cursor: pointer;
     }
 

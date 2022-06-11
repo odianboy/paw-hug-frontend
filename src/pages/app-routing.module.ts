@@ -18,7 +18,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [NotFoundPageModule, HomeModule, RouterModule.forRoot(routes)],
+  imports: [
+    NotFoundPageModule,
+    HomeModule,
+    RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

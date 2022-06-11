@@ -1,12 +1,18 @@
+@import '/src/app/index.scss';
+
 :host ::ng-deep {
     .mat-form-field {
         min-width: 300px;
         padding: 0;
 
+        @include screenMedia('tablet-landscape') {
+            min-width: 250px;
+        }
     }
 
     .reg-submit-btn {
-            text-align: center;
+        text-align: center;
+
         .mat-raised-button.mat-button-base {
             width: 70% ;
             margin: 0;
@@ -24,31 +30,30 @@
 }
 
 .reg {
+    @include flexColumn ();
     background-color: white;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
     border-radius: 10px;
-    box-shadow: 46px 45px 50px -15px rgba(81, 57, 114, 0.2);
+    box-shadow: $boxShadow;
     margin-top: 20px;
     padding: 20px;
     position: relative;
 
+    @include screenMedia('tablet-landscape') {
+        position: static;
+    }
+
     &__title {
-        font-size: 24px;
+        font-size: $fontSizeTitle;
         margin: 10px;
     }
 
     &__content {
-        display: flex;
-        flex-direction: column;
+        @include flexColumn ();
     }
 }
 
 .wrapper {
-    max-width: 800px;
-    margin: auto;
+    @include wrapperSize ();
 }
-
