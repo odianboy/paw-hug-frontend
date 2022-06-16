@@ -1,4 +1,12 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  ChangeDetectionStrategy,
+  Output,
+  EventEmitter,
+  Input,
+  ChangeDetectorRef
+} from '@angular/core';
+import { UserAvatar } from 'src/shared/api';
 
 @Component({
   selector: 'pw-avatar-circle',
@@ -6,13 +14,19 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./avatar-circle.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AvatarCircleComponent implements OnInit {
+export class AvatarCircleComponent {
+  readonly iconName: string = 'photo_camera';
 
-  iconName = 'photo_camera';
-  
-  constructor() { }
+  @Output() onAddAvatar: EventEmitter<UserAvatar>;
+  @Input() avatar: UserAvatar;
 
-  ngOnInit() {
+  constructor(private cd: ChangeDetectorRef) {
+    this.onAddAvatar = new EventEmitter<UserAvatar>();
+    this.avatar = {} as UserAvatar;
+  }
+
+  addAvatar(avatar: UserAvatar): void {
+    this.onAddAvatar.emit(avatar);
   }
 
 }

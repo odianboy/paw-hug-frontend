@@ -10,7 +10,10 @@
                 [formGroup]="form"
                 (ngSubmit)="submit()"
             >
-                <pw-avatar-circle></pw-avatar-circle>
+                <pw-avatar-circle
+                    (onAddAvatar)="addAvatar($event)"
+                    [avatar]="avatar"
+                ></pw-avatar-circle>
                 
                 <pw-input
                     [parentForm]="form"
