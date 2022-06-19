@@ -21,3 +21,16 @@
             + 'Available breakpoints are: #{map-keys($breakpoints)}.';
     }
 }
+
+@mixin avatar {
+    width: 16em;
+    height: 16em;
+    line-height: 16em;
+    border-radius: 50%;
+}
+
+@mixin avatarAdaptive {
+    width: 15.5em;
+    height: 15.5em;
+    line-height: 15.5em;
+}

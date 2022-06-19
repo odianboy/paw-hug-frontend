@@ -1,6 +1,14 @@
+<input
+  class="circle__add-photo"
+  type="file"
+  accept="image/jpeg"
+  (change)="addAvatar($event)"
+  #file
+>
 <pw-button-mini-fab
   class="circle"
   tooltipName="Добавить"
+  (click)="file.click()"
 >
-  <pw-icon class="icon">{{iconName}}</pw-icon>
+  <pw-icon class="icon">{{ iconName }}</pw-icon>
 </pw-button-mini-fab>

@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
 import { lastValueFrom, Observable, Subscriber } from "rxjs";
-import { UserAvatar } from "src/shared/api";
+import type { UserAvatar } from "src/shared/api";
 
-@Injectable({
+@Injectable ({
     providedIn: 'root',
 })
 export class AvatarService {
@@ -16,7 +16,7 @@ export class AvatarService {
             name: file.name,
             size: file.size,
             type: file.type,
-            url:  await lastValueFrom(file$)
+            url: await lastValueFrom(file$),
         }
 
         return avatar;

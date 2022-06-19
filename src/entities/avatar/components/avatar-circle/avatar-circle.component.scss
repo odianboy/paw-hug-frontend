@@ -7,30 +7,44 @@
 }
 
 .avatar {
-    width: 16em;
-    height: 16em;
-    border: dotted 4px black;
-    border-radius: 50%;
-    line-height: 16em;
+    @include avatar();
+    border: dotted 4px $blackColor;
+    background: $whiteColor;
     text-align: center;
-    background: white;
     position: absolute;
     left: -70px;
     top: 70px;
 
     @include screenMedia('tablet-landscape') {
+        @include avatarAdaptive();
         position: static;
-        width: 15.5em;
-        height: 15.5em;
-        line-height: 15.5em;
         margin: 5px;
+    }
+
+    &__add-photo {
+        position: relative;
     }
 }
 
 .avatar-cover {
     border: transparent;
-}
 
-.add-photo {
-    position: relative;
+    &__photo {
+        @include avatar();
+        object-fit: cover;
+
+        @include screenMedia('tablet-landscape') {
+            @include avatarAdaptive();
+        }
+    }
+
+    &__add-photo {
+        position: relative;
+        top: -119px;
+        right: 4px;
+
+        @include screenMedia('tablet-landscape') {
+            top: -115px;
+        }
+    }
 }

@@ -1,12 +1,11 @@
 import {
-  Component,
-  ChangeDetectionStrategy,
-  Output,
-  EventEmitter,
   Input,
-  ChangeDetectorRef
+  Output,
+  Component,
+  EventEmitter,
+  ChangeDetectionStrategy,
 } from '@angular/core';
-import { UserAvatar } from 'src/shared/api';
+import type { UserAvatar } from 'src/shared/api';
 
 @Component({
   selector: 'pw-avatar-circle',
@@ -20,7 +19,7 @@ export class AvatarCircleComponent {
   @Output() onAddAvatar: EventEmitter<UserAvatar>;
   @Input() avatar: UserAvatar;
 
-  constructor(private cd: ChangeDetectorRef) {
+  constructor() {
     this.onAddAvatar = new EventEmitter<UserAvatar>();
     this.avatar = {} as UserAvatar;
   }
@@ -28,5 +27,4 @@ export class AvatarCircleComponent {
   addAvatar(avatar: UserAvatar): void {
     this.onAddAvatar.emit(avatar);
   }
-
 }

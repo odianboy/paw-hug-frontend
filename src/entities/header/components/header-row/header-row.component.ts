@@ -10,9 +10,9 @@ import { AuthDialogComponent } from 'src/features/auth-dialog/components';
 })
 export class HeaderRowComponent {
 
-  title = 'Объятия лап!';
-  textTooltip = 'Войти';
-  icon = 'login';
+  readonly title: string = 'Объятия лап!';
+  readonly textTooltip: string = 'Войти';
+  readonly icon: string = 'login';
 
   constructor(public dialog: MatDialog) {}
 

@@ -3,7 +3,7 @@ import {
   EventEmitter,
   Output,
   Input,
-  ChangeDetectionStrategy
+  ChangeDetectionStrategy,
 } from '@angular/core';
 
 @Component({

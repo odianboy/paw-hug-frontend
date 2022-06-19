@@ -17,7 +17,7 @@ import { RegistrationPage } from "./registration.page";
         HeaderModule,
         SharedModule,
         UiKitModule,
-        AvatarModule
+        AvatarModule,
     ],
 })
 export class RegistrationModule {}

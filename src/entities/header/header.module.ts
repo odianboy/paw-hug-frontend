@@ -3,7 +3,7 @@ import { UiKitModule } from 'src/shared/ui';
 
 import { AuthDialogModule } from 'src/features/auth-dialog';
 
-import { HeaderRowComponent } from './components'
+import { HeaderRowComponent } from './components';
 
 @NgModule({
     declarations: [HeaderRowComponent],

@@ -1,22 +1,25 @@
 <div
-  *ngIf="!avatar?.url; else userAvatar"
-  class="avatar"
   pwAvatarDropZone
   (onFileDropped)="addAvatar($event)"
 >
-  <pw-icon class="icon">{{iconName}}</pw-icon>
-  <div class="add-photo">
-    <pw-avatar-plus></pw-avatar-plus>
-  </div>
-</div>
-
-<ng-template #userAvatar>
-
-  <img
-    class="avatar avatar-cover"
-    pwAvatarDropZone
-    (onFileDropped)="addAvatar($event)"
-    [src]="avatar.url"
-  >
+  <ng-container *ngIf="!avatar?.url; else userAvatar">
+    <div class="avatar">
+      <pw-icon class="icon">{{ iconName }}</pw-icon>
+      <div class="avatar__add-photo">
+        <pw-avatar-plus (onAddPhoto)="addAvatar($event)"></pw-avatar-plus>
+      </div>
+    </div>
+  </ng-container>
   
-</ng-template>
+  <ng-template #userAvatar>
+    <div class="avatar avatar-cover">
+      <img
+        class="avatar-cover__photo"
+        [src]="avatar.url"
+      >
+      <div class="avatar-cover__add-photo">
+        <pw-avatar-plus (onAddPhoto)="addAvatar($event)"></pw-avatar-plus>
+      </div>
+    </div>
+  </ng-template>
+</div>

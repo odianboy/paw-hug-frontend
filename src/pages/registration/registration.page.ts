@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { UserAvatar } from 'src/shared/api';
+import type { UserAvatar } from 'src/shared/api';
 
 @Component({
     selector: 'pw-registration',
@@ -23,7 +23,7 @@ export class RegistrationPage {
       mobile: new FormControl(null, [Validators.required, Validators.minLength(10)]),
       email: new FormControl(null, [Validators.required, Validators.email]),
       password: new FormControl(null, [Validators.required, Validators.minLength(10)]),
-      avatar: new FormControl(''),
+      avatar: new FormControl(null),
     })
   }
 

@@ -11,7 +11,7 @@ export class AuthDialogComponent {
 
   form: FormGroup;
   hide = true;
-  nameIconWrite = 'mode_edit';
+  readonly nameIconWrite: string = 'mode_edit';
 
   constructor(private fb: FormBuilder) {
     this.form = this.formInit();
