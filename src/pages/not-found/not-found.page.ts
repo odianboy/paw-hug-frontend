@@ -6,4 +6,10 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
     styleUrls: ['./not-found.page.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NotFoundPage {}
+export class NotFoundPage {
+    readonly imageSrc: string = '/assets/not-found/cat.png';
+
+    get image(): string {
+        return this.imageSrc;
+    }
+}

@@ -4,7 +4,7 @@
     overflow: auto;
     height: 47px;
     background-color: $headerColor;
-    border-bottom: 1px solid #D6DBE2;
+    border-bottom: 1px solid $headerborderColor;
     
     &__content {
         display: flex;

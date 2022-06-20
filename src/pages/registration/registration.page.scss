@@ -27,11 +27,15 @@
     .mat-focus-indicator {
         vertical-align: middle;
     }
+
+    .mat-focus-indicator.hide-icon.mat-icon-button.mat-button-base {
+        justify-content: flex-end;
+    }
 }
 
 .reg {
     @include flexColumn ();
-    background-color: white;
+    background-color: $whiteColor;
     width: 100%;
     align-items: center;
     border-radius: 10px;
@@ -52,8 +56,4 @@
     &__content {
         @include flexColumn ();
     }
-}
-
-.wrapper {
-    @include wrapperSize ();
 }

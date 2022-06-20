@@ -1,0 +1,12 @@
+@import '/src/app/index.scss';
+
+.not-found {
+    @include flexColumn ();
+    background-color: $whiteColor;
+    width: 100%;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: $boxShadow;
+    margin-top: 20px;
+    padding: 20px;
+}
