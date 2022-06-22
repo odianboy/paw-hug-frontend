@@ -5,13 +5,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
-
 import {
   ButtonComponent,
   IconComponent,
   ButtonSubmitComponent,
   InputComponent,
   ButtonMiniFabComponent,
+  ValidationComponent,
 } from './components';
 import { SharedModule } from '../lib';
 
@@ -22,6 +22,7 @@ import { SharedModule } from '../lib';
     ButtonSubmitComponent,
     InputComponent,
     ButtonMiniFabComponent,
+    ValidationComponent
   ],
   imports: [
     MatButtonModule,

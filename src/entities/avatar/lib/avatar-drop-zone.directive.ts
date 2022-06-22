@@ -1,6 +1,7 @@
 import { Directive, EventEmitter, HostListener, Output } from "@angular/core";
+import { lastValueFrom } from "rxjs";
 import type { UserAvatar } from "src/shared/api";
-import { AvatarService } from "../model";
+import { AvatarService, AvatarValidationService } from "../model";
 
 @Directive({
     selector: '[pwAvatarDropZone]',
@@ -8,7 +9,10 @@ import { AvatarService } from "../model";
 export class AvatarDropZoneDirective {
     @Output() onFileDropped: EventEmitter<UserAvatar>;
 
-    constructor(private avatarService: AvatarService) {
+    constructor(
+        private avatarService: AvatarService,
+        private avatarValidationService: AvatarValidationService,
+    ) {
         this.onFileDropped = new EventEmitter<UserAvatar>();
     }
 
@@ -32,6 +36,9 @@ export class AvatarDropZoneDirective {
         const file = event.dataTransfer?.files[0];
 
         if (file) {
+            if (this.avatarValidationService.syncValidation(file)) {
+                return
+            }
             const avatar = this.avatarService.createAvatar(file);
             this.onFileDropped.emit(await avatar);
         };

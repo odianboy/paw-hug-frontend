@@ -7,7 +7,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NotFoundPage {
-    readonly imageSrc: string = '/assets/not-found/cat.png';
+    readonly imageSrc: string = '/assets/not-found/girl.png';
 
     get image(): string {
         return this.imageSrc;

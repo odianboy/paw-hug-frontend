@@ -1,0 +1,25 @@
+@import '/src/app/index.scss';
+
+.validation {
+    @include flexColumn();
+    align-items: center;
+
+    &__content {
+        @include flexColumn();
+        align-items: center;
+    }
+
+    &__title {
+        font-size: $fontSizeTitle;
+        font-weight: bold;
+    }
+
+    &__text {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+}
+
+.mat-button {
+    width: 200px;
+}

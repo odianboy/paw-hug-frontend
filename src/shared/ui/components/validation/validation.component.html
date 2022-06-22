@@ -1,0 +1,20 @@
+<div class="validation">
+  <h1
+    mat-dialog-title
+    class="validation__title"
+  >
+    Предупреждение!
+  </h1>
+  <mat-dialog-content class="validation__content">
+    <p class="validation__text">{{data.text}}</p>
+    <img
+      [src]="image"
+      alt="validation image"
+      width="170"
+      height="150"
+    >
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close class="btn">Понятно</button>
+  </mat-dialog-actions>
+</div>

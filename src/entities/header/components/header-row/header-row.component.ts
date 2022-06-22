@@ -18,7 +18,7 @@ export class HeaderRowComponent {
 
   openDialog() {
     this.dialog.open(AuthDialogComponent, {
-      panelClass: 'auth-dialog',
+      panelClass: 'dialog',
     });
   }
 }

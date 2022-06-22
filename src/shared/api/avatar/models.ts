@@ -3,4 +3,4 @@ export type UserAvatar = {
     url: string | null;
     size: number;
     type: string;
-};
+}

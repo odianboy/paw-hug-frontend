@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { NotFoundPage, NotFoundPageModule } from 'src/pages/not-found'
 import { HomeModule, HomePage } from 'src/pages/home';
 
 const routes: Routes = [
@@ -13,13 +12,16 @@ const routes: Routes = [
       (m) => m.RegistrationModule
     ),
   },
-  { path: 'not-found', component: NotFoundPage },
-  { path: '**', redirectTo: '/not-found' },
+  { path: '**',
+    loadChildren: () =>
+    import('./not-found/not-found.module').then(
+      (m) => m.NotFoundPageModule
+    )
+  },
 ];
 
 @NgModule({
   imports: [
-    NotFoundPageModule,
     HomeModule,
     RouterModule.forRoot(routes)],
   exports: [RouterModule]
