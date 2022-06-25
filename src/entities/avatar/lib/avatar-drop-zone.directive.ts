@@ -36,7 +36,10 @@ export class AvatarDropZoneDirective {
         const file = event.dataTransfer?.files[0];
 
         if (file) {
-            if (this.avatarValidationService.syncValidation(file)) {
+            if (
+                this.avatarValidationService.checkType(file) || 
+                await lastValueFrom(this.avatarValidationService.syncValidation(file)))
+            {
                 return
             }
             const avatar = this.avatarService.createAvatar(file);

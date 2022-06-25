@@ -11,9 +11,7 @@ import type { Validation } from 'src/shared/api';
 export class ValidationComponent {
   readonly imageSrc: string = '/assets/validation/lying-cat.png';
 
-  constructor(
-    @Inject(MAT_DIALOG_DATA) public data: Validation
-  ) {}
+  constructor(@Inject(MAT_DIALOG_DATA) public data: Validation) {}
 
   get image(): string {
     return this.imageSrc;
