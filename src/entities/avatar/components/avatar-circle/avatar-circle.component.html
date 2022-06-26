@@ -1,11 +1,19 @@
 <div
   pwAvatarDropZone
   (onFileDropped)="addAvatar($event)"
+  (dragover)="imageOver($event)"
+  (dragleave)="imageLeave($event)"
+  (drop)="imageDrop($event)"
 >
-  <ng-container *ngIf="!avatar?.url; else userAvatar">
-    <div class="avatar">
-      <pw-icon class="icon">{{ iconName }}</pw-icon>
-      <div class="avatar__add-photo">
+  <ng-container *ngIf="!avatar?.url; else userAvatar" >
+    <div
+      class="avatar no-cover"
+      (mouseenter)="isIcon = !isIcon"
+      (mouseleave)="isIcon = !isIcon"
+      #circle
+    >
+      <pw-icon class="icon">{{ icon }}</pw-icon>
+      <div class="avatar__add-photo" *ngIf="buttonPlus">
         <pw-avatar-plus (onAddPhoto)="addAvatar($event)"></pw-avatar-plus>
       </div>
     </div>

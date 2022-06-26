@@ -1,5 +1,11 @@
+@import './vars.scss';
+
 .dialog {
     .mat-dialog-container {
         border-radius: 10px;
     }
+}
+
+.mat-tooltip {
+    font-size: $fontSizeTooltip;
 }

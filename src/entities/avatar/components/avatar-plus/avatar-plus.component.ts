@@ -1,6 +1,7 @@
 import { Component, ChangeDetectionStrategy, EventEmitter, Output } from '@angular/core';
 import { lastValueFrom } from 'rxjs';
 import type { UserAvatar } from 'src/shared/api';
+import { ElementService } from 'src/shared/api';
 import { AvatarService, AvatarValidationService } from '../../model';
 
 @Component({
@@ -15,13 +16,14 @@ export class AvatarPlusComponent {
   
   constructor(
     private avatarService: AvatarService,
+    private elementService: ElementService,
     private avatarValidationService: AvatarValidationService,
   ) {
     this.onAddPhoto = new EventEmitter<UserAvatar>();
   }
 
   async addAvatar(event: Event) {
-    const target = event.target as HTMLInputElement;
+    const target = this.elementService.getTarget(event);
     const file: File = (target.files as FileList)[0];
     
     if (file) {
