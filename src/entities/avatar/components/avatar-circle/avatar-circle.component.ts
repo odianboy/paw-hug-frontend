@@ -27,9 +27,10 @@ export class AvatarCircleComponent {
   readonly circleOpacity: string = '1';
   readonly noCoverClass: string = 'no-cover';
   readonly avatarCoverClass: string = 'avatar-cover';
-  isIcon: boolean = true;
-  buttonPlus: boolean = true;
-  @ViewChild('circle') circle: ElementRef<HTMLElement>;
+  isIcon: boolean;
+  buttonPlus: boolean;
+  @ViewChild('noCover') noCover: ElementRef<HTMLElement>;
+  @ViewChild('cover') cover: ElementRef<HTMLElement>;
 
   @Output() onAddAvatar: EventEmitter<UserAvatar>;
   @Input() avatar: UserAvatar;
@@ -40,10 +41,13 @@ export class AvatarCircleComponent {
   ) {
     this.onAddAvatar = new EventEmitter<UserAvatar>();
     this.avatar = {} as UserAvatar;
-    this.circle = {} as ElementRef<HTMLElement>;
+    this.noCover = {} as ElementRef<HTMLElement>;
+    this.cover = {} as ElementRef<HTMLElement>;
+    this.isIcon = true;
+    this.buttonPlus = true;
   }
 
-  addAvatar(avatar: UserAvatar): void {
+  public addAvatar(avatar: UserAvatar): void {
     this.onAddAvatar.emit(avatar);
   }
 
@@ -52,38 +56,28 @@ export class AvatarCircleComponent {
   }
 
   imageOver(event: Event) {
-   if (
-    this.elementService.checkClassName(event, this.noCoverClass) ||
-    this.elementService.checkClassName(event, 'icon')
-    ) {
-    this.renderer.setStyle(this.circle.nativeElement, 'background', this.circleColor);
-    this.renderer.setStyle(this.circle.nativeElement, 'border', this.circleNoBorder);
+   if (this.elementService.checkClassName(event, this.noCoverClass)) {
+    this.renderer.setStyle(this.noCover.nativeElement, 'background', this.circleColor);
+    this.renderer.setStyle(this.noCover.nativeElement, 'border', this.circleNoBorder);
     this.buttonPlus = false;
     this.isIcon = false;
    } else if (this.elementService.checkClassName(event, this.avatarCoverClass)){
-    this.elementService.getTarget(event).style.opacity = `${+this.circleOpacity / 2}`;
+    this.renderer.setStyle(this.cover.nativeElement, 'opacity', `${+this.circleOpacity / 2}`);
    }
   }
 
   imageLeave(event: Event) {
     if (this.elementService.checkClassName(event, this.noCoverClass)) {
-      this.renderer.setStyle(this.circle.nativeElement, 'background', this.whiteColor);
-      this.renderer.setStyle(this.circle.nativeElement, 'border', this.circleBorder);
+      this.renderer.setStyle(this.noCover.nativeElement, 'background', this.whiteColor);
+      this.renderer.setStyle(this.noCover.nativeElement, 'border', this.circleBorder);
       this.buttonPlus = true;
       this.isIcon = true;
     } else if (this.elementService.checkClassName(event, this.avatarCoverClass)){
-      this.elementService.getTarget(event).style.opacity = this.circleOpacity;
+      this.renderer.setStyle(this.cover.nativeElement, 'opacity', this.circleOpacity);
     }
   }
 
   imageDrop(event: Event) {
-    if (this.elementService.checkClassName(event, this.noCoverClass)) {
-      this.renderer.setStyle(this.circle.nativeElement, 'background', this.whiteColor);
-      this.renderer.setStyle(this.circle.nativeElement, 'border', this.circleBorder);
-      this.buttonPlus = true;
-      this.isIcon = true;
-    } else if (this.elementService.checkClassName(event, this.avatarCoverClass)) {
-      this.elementService.getTarget(event).style.opacity = this.circleOpacity;
-    }
+    this.imageLeave(event);
   }
 }

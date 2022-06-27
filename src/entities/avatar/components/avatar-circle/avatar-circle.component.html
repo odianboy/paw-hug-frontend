@@ -10,21 +10,27 @@
       class="avatar no-cover"
       (mouseenter)="isIcon = !isIcon"
       (mouseleave)="isIcon = !isIcon"
-      #circle
+      #noCover
     >
       <pw-icon class="icon">{{ icon }}</pw-icon>
-      <div class="avatar__add-photo" *ngIf="buttonPlus">
+      <div
+        class="avatar__add-photo"
+        *ngIf="buttonPlus"
+      >
         <pw-avatar-plus (onAddPhoto)="addAvatar($event)"></pw-avatar-plus>
       </div>
     </div>
   </ng-container>
   
   <ng-template #userAvatar>
-    <div class="avatar avatar-cover">
+    <div
+      class="avatar avatar-cover"
+    >
       <img
         class="avatar-cover__photo"
         [src]="avatar.url"
         alt="user avatar"
+        #cover
       >
       <div class="avatar-cover__add-photo">
         <pw-avatar-plus (onAddPhoto)="addAvatar($event)"></pw-avatar-plus>

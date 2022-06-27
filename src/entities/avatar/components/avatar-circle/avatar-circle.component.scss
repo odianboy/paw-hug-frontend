@@ -53,3 +53,7 @@
 .avatar:hover {
     background-color: $headerColor;
 }
+
+.icon {
+    pointer-events: none;
+}
