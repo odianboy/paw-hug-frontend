@@ -4,12 +4,14 @@ import { UiKitModule } from 'src/shared/ui';
 
 import { HomePage } from './home.page';
 import { HeaderModule } from 'src/entities/header';
+import { FooterModule } from 'src/entities/footer';
 
 @NgModule({
   imports: [
     CommonModule,
     UiKitModule,
-    HeaderModule
+    HeaderModule,
+    FooterModule,
   ],
   declarations: [HomePage],
   exports: [HomePage]

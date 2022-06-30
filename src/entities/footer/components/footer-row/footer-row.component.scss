@@ -1,0 +1,12 @@
+@import '/src/app/index.scss';
+
+.footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: auto;
+    background-color: $headerColor;
+    border-top: 1px solid $headerborderColor;
+    padding: 20px;
+    font-size: $fontSize;
+}
