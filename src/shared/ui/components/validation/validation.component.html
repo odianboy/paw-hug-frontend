@@ -8,18 +8,15 @@
   <mat-dialog-content class="validation__content">
     <p class="validation__text">{{ data.text }}</p>
     <img
-      class="validation__image"
-      alt="validation"
+      alt="Лежащий котик"
       [src]="image"
+      width="170"
+      height="150"
     >
   </mat-dialog-content>
   <mat-dialog-actions align="end">
-    <button
-      mat-button
-      mat-dialog-close
-      class="btn"
-    >
+    <pw-button mat-dialog-close>
       Понятно
-    </button>
+    </pw-button>
   </mat-dialog-actions>
 </div>

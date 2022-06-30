@@ -1,5 +1,11 @@
 @import '/src/app/index.scss';
 
+:host ::ng-deep {
+    .mat-button {
+        min-width: 200px;
+    }
+}
+
 .validation {
     @include flexColumn();
     align-items: center;
@@ -18,13 +24,4 @@
         font-size: $fontSize;
         margin-bottom: 10px;
     }
-
-    &__image {
-        width: 170px;
-        height: 150px;
-    }
-}
-
-.mat-button {
-    width: 200px;
 }
