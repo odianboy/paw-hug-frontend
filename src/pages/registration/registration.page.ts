@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import type { UserAvatar } from 'src/shared/api';
 
 @Component({
@@ -9,21 +9,21 @@ import type { UserAvatar } from 'src/shared/api';
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RegistrationPage {
-  form: FormGroup;
+  form: UntypedFormGroup;
   hide = true;
   readonly nameIconWrite: string = 'mode_edit';
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: UntypedFormBuilder) {
     this.form = this.formInit();
   }
 
   formInit() {
     return this.fb.group({
-      name: new FormControl(null, [Validators.required]),
-      mobile: new FormControl(null, [Validators.required, Validators.minLength(10)]),
-      email: new FormControl(null, [Validators.required, Validators.email]),
-      password: new FormControl(null, [Validators.required, Validators.minLength(10)]),
-      avatar: new FormControl(null),
+      name: new UntypedFormControl(null, [Validators.required]),
+      mobile: new UntypedFormControl(null, [Validators.required, Validators.minLength(10)]),
+      email: new UntypedFormControl(null, [Validators.required, Validators.email]),
+      password: new UntypedFormControl(null, [Validators.required, Validators.minLength(10)]),
+      avatar: new UntypedFormControl(null),
     })
   }
 

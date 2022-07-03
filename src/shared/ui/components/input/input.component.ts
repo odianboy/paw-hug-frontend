@@ -1,5 +1,5 @@
 import { Component, Input, ChangeDetectionStrategy, forwardRef } from '@angular/core';
-import { ControlValueAccessor, FormControl, FormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormControl, UntypedFormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'pw-input',
@@ -21,7 +21,7 @@ export class InputComponent implements ControlValueAccessor {
   changed!: (value: string) => void;
   touched!: () => void;
 
-  @Input() parentForm!: FormGroup;
+  @Input() parentForm!: UntypedFormGroup;
   @Input() fieldName!: string;
 
   @Input() labelName: string;
@@ -42,8 +42,8 @@ export class InputComponent implements ControlValueAccessor {
     this.isDisabled = true;
   }
 
-  get formField(): FormControl {
-    return this.parentForm?.get( this.fieldName ) as FormControl;
+  get formField(): UntypedFormControl {
+    return this.parentForm?.get( this.fieldName ) as UntypedFormControl;
   }
 
   writeValue(value: string): void {

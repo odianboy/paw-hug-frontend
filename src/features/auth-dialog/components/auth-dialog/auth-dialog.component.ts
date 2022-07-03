@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'pw-auth-dialog',
@@ -9,18 +9,18 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class AuthDialogComponent {
 
-  form: FormGroup;
+  form: UntypedFormGroup;
   hide = true;
   readonly nameIconWrite: string = 'mode_edit';
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: UntypedFormBuilder) {
     this.form = this.formInit();
   }
 
   formInit() {
     return this.fb.group({
-      mobile: new FormControl(null, [Validators.required, Validators.minLength(10)]),
-      password: new FormControl(null, Validators.required),
+      mobile: new UntypedFormControl(null, [Validators.required, Validators.minLength(10)]),
+      password: new UntypedFormControl(null, Validators.required),
     })
   }
 
