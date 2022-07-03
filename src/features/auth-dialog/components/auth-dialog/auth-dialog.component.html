@@ -1,6 +1,6 @@
 <div class="auth">
-  <h3 class="auth__title">Авторизация</h3>
-  <div mat-dialog-content>
+  <p class="auth__title h2">Авторизация</p>
+  <aside mat-dialog-content>
     <form
       class="auth__content"
       [formGroup]="form"
@@ -38,8 +38,13 @@
         </button>
       </pw-input>
 
-      <div class="info">
-        <a class="info__link" [routerLink]="['']">Забыли пароль?</a>
+      <nav class="info">
+        <a
+          class="info__link"
+          [routerLink]="['']"
+        >
+          Забыли пароль?
+        </a>
         <a
           class="info__link"
           [routerLink]="['registration']"
@@ -47,13 +52,13 @@
         >
           Зарегистрироваться
         </a>
-      </div>
+      </nav>
 
-      <div class="auth__submit">
+      <aside class="auth__submit">
         <pw-button-submit [disabled]="form.invalid">
           Войти
         </pw-button-submit>
-      </div>
+      </aside>
     </form>
-  </div>
+  </aside>
 </div>

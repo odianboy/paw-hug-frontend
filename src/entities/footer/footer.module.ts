@@ -1,10 +1,10 @@
 import { NgModule } from "@angular/core";
 import { UiKitModule } from "src/shared/ui";
-import { FooterRowComponent } from "./components";
+import { FooterRowComponent, FooterIconComponent } from "./components";
 
 @NgModule({
-    declarations: [FooterRowComponent],
+    declarations: [FooterRowComponent, FooterIconComponent],
     imports: [UiKitModule],
-    exports: [FooterRowComponent],
+    exports: [FooterRowComponent, FooterIconComponent],
 })
 export class FooterModule {}

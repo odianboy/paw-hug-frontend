@@ -12,6 +12,10 @@
 
     &__info {
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
+    }
+
+    &__image {
+        margin: 0 10px 0 10px;
     }
 }

@@ -1,20 +1,20 @@
-<nav class="header">
+<div class="header">
   <div class="container">
-    <div class="header__content">
-      <h3
+    <nav class="header__content">
+      <h1
         class="header__title"
         [routerLink]="['']"
       >
         {{ title }}
-      </h3>
-      <div class="header__authorization">
+      </h1>
+      <aside class="header__authorization">
         <pw-button
           [textTooltip]="textTooltip"
           (click)="openDialog()"
         >
           <pw-icon>{{ icon }}</pw-icon>
         </pw-button>
-      </div>
-    </div>
+      </aside>
+    </nav>
   </div>
-</nav>
+</div>

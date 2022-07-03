@@ -1,34 +1,28 @@
 <div class="footer">
   <div class="container">
     <div class="wrapper">
-      <div class="footer__info">
-        <a
-        href="https://krasnodog.ru/"
-        matTooltip="Перейти на сайт"
-        matTooltipPosition="right"
-        target="_blank"
-      >
-        <img
-          src="/assets/footer/krasnodoglogo.png"
-          alt="КрасноДог лого"
-          height="50"
-          width="200"
-        >
-      </a>
-      <a
-        href="https://github.com/odianboy"
-        matTooltip="Перейти на сайт"
-        matTooltipPosition="right"
-        target="_blank"
-      >
-        <img
-          src="/assets/footer/githublogo.svg"
-          alt="ГитХаб лого"
-          height="50"
-          width="50"
-        >
-      </a>
-      </div>
+      <nav class="footer__info">
+        <pw-footer-icon
+          hrefName="https://krasnodog.ru"
+          textTooltip="Перейти на сайт"
+          srcName="/assets/footer/krasnodoglogo.png"
+          altName="КрасноДог лого"
+          heightSize="50"
+          widthSize="200"
+          tooltipPosition="left"
+          class="footer__image"
+        ></pw-footer-icon>
+
+        <pw-footer-icon
+          hrefName="https://github.com/odianboy"
+          textTooltip="Перейти на сайт"
+          srcName="/assets/footer/githublogo.svg"
+          altName="ГитХаб лого"
+          heightSize="50"
+          widthSize="50"
+          class="footer__image"
+        ></pw-footer-icon>
+      </nav>
     </div>
   </div>
 </div>

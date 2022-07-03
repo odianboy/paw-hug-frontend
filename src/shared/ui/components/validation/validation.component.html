@@ -1,17 +1,17 @@
-<div class="validation">
-  <h1
+<aside class="validation">
+  <p
     mat-dialog-title
-    class="validation__title"
+    class="h2"
   >
     Предупреждение!
-  </h1>
+  </p>
   <mat-dialog-content class="validation__content">
     <p class="validation__text">{{ data.text }}</p>
     <img
       alt="Лежащий котик"
-      [src]="image"
       width="170"
       height="150"
+      [src]="image"
     >
   </mat-dialog-content>
   <mat-dialog-actions align="end">
@@ -19,4 +19,4 @@
       Понятно
     </pw-button>
   </mat-dialog-actions>
-</div>
+</aside>

@@ -20,7 +20,7 @@ import  { ElementService } from 'src/shared/api';
 export class AvatarCircleComponent {
   readonly iconName: string = 'photo_camera';
   readonly iconNameEnter: string = 'cloud_download';
-  readonly circleColor: string = '#f9f7ea';
+  readonly circleColor: string = '#F5F5F5';
   readonly whiteColor: string = '#fff';
   readonly circleBorder: string = 'dotted 4px black';
   readonly circleNoBorder: string = 'none';
